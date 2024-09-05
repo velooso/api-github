@@ -11,9 +11,8 @@ module.exports = {
     sourceType: "module",
   },
   plugins: ["react"],
-  rules: {
+  "rules": {
     "import/prefer-default-export": "off",
-    "react/jsx-filename-extension": [1, { "allow": "as-needed" }],
-    "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
+    "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }]
   },
 };
