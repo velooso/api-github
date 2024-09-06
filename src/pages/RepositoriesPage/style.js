@@ -11,9 +11,13 @@ export const Container = styled.main`
 
 export const Sidebar = styled.aside`
   background: ${(props) => props.theme.colors.background};
-  min-width: 20rem;
-  max-height: 100%;
+  min-width: 8rem;
+  max-height: 100vh;
   overflow-y: hidden;
+
+    @media screen and (max-width: ${(props) => props.theme.breakpoints.sm}){
+    padding: 1rem 1rem;
+  }
 `;
 
 export const Main = styled.section`
@@ -27,6 +31,7 @@ export const Main = styled.section`
     height: 100%;
   }
     @media screen and (max-width: ${(props) => props.theme.breakpoints.sm}){
-    padding: 40px 20px;
+    padding: 2.5rem 0.1rem;
+    // width: 100vw;
   }
   `;

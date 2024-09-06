@@ -45,7 +45,7 @@ export const theme = {
     sans: ["Open Sans", "Arial", "Helvetica", "sans-serif"].join(","),
     mono: ["IBM Plex Mono", "serif"].join(","),
   },
-  fontSize: {
+  fontSizes: {
     sm: '0.8rem',
     md: '1rem',
     lg: '1.2rem',
