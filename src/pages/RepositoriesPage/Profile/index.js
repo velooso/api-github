@@ -1,6 +1,6 @@
 import React from 'react';
 import { MdGroup, MdLink, MdLocationCity, MdWork } from 'react-icons/md';
-import { Container, Header, Login, Avatar, Name, Inner, Date} from './style';
+import { Container, Header, Login, Avatar, Name, Inner, Date } from './style';
 
 function Profile() {
   return (
@@ -13,7 +13,7 @@ function Profile() {
       <Inner>
         <Date>
           <MdGroup size={20} />
-          3&nbsp; <i>seguidores</i>&nbsp;  &middot;&nbsp; 3&nbsp; <i>seguindo</i>
+          3&nbsp; <i>seguidores</i> &nbsp;&middot;&nbsp; 3&nbsp; <i>seguindo</i>
         </Date>
         <Date>
           <MdWork size={20} />
@@ -25,7 +25,7 @@ function Profile() {
         </Date>
         <Date>
           <MdLink size={20} />
-          guebodev.com.br
+          <a href="https://github.com/velooso">veloosodec.com.br</a>
         </Date>
       </Inner>
     </Container>
