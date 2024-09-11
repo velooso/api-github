@@ -34,14 +34,27 @@ export const Selector = styled.button`
   background: ${(props) => props.color || props.theme.colors.light};
   color: ${(props) => props.color ? props.theme.colors.white : props.theme.colors.black};
   }
+
+   @media screen and (max-width: ${(props) => props.theme.breakpoints.md}){
+    border-radius: 20px;
+    display:flex;
+  }
+}
 `;
 
 export const Cleaner = styled.button`
   background: transparent;
-  text-align: center;
+  color: ${(props) => props.theme.colors.text};
+  text-align: left;
   border: none;
   margin-top: 0.8rem;
-  padding-right: 10rem;
 
-  color: ${(props) => props.theme.colors.text};
+  &:hover{
+    color: rgba( 255, 255, 255, 0.5);
+  }
+
+  @media screen and (max-width: ${(props) => props.theme.breakpoints.md}) {
+  text-align: center;  
+  padding: 0 1rem;
+  }
 `;

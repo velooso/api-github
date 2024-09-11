@@ -17,6 +17,7 @@ export const Sidebar = styled.aside`
 
     @media screen and (max-width: ${(props) => props.theme.breakpoints.sm}){
     padding: 1rem 1rem;
+    min-height: 100%;
   }
 `;
 

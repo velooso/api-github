@@ -2,6 +2,7 @@
   import { Container, Sidebar, Main } from './style';
   import Profile from './Profile';
   import Filter from './Filter';
+  import Repositories from './Repositories';
 
   function RepositoriesPage() {
     return(
@@ -11,7 +12,7 @@
         <Filter />
       </Sidebar>
       <Main>
-        Main
+        <Repositories />
       </Main>
     </Container>
     );
