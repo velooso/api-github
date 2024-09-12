@@ -1,10 +1,11 @@
 import React from 'react'
 import { Container } from './style';
+import { Repository } from "./Repository/style";
 
 function Repositories() {
   return (
    <Container>
-        <h1>Isooo</h1>
+        <Repository />
    </Container>
 )
 }
