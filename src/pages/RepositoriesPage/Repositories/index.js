@@ -1,6 +1,6 @@
 import React from 'react'
 import { Container } from './style';
-import { Repository } from "./Repository/style";
+import Repository from './Repository';
 
 function Repositories() {
   return (

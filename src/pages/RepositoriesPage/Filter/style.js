@@ -54,7 +54,7 @@ export const Cleaner = styled.button`
   }
 
   @media screen and (max-width: ${(props) => props.theme.breakpoints.md}) {
-  text-align: center;  
+  text-align: center;
   padding: 0 1rem;
   }
 `;

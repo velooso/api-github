@@ -24,6 +24,7 @@ export const theme = {
     indigo: "#4263Eb",
     purple: "#7E5CEF",
     pink: "#FE5895",
+    champagneDark: "#bdc3c7",
     metalDark: "#7f8c8d",
     gray100: "#FAFAFA",
     gray200: "#E9ECEF",
