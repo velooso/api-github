@@ -1,35 +1,53 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { MdGroup, MdLink, MdLocationCity, MdWork } from 'react-icons/md';
 import { Container, Header, Login, Avatar, Name, Inner, Date } from './style';
 
-function Profile() {
-  return (
-    <Container>
+ function Profile({ user }) {
+  return <Container>
       <Header>
-        <Avatar src="https://avatars.githubusercontent.com/u/127763531?v=4" />
-        <Login>@guebo</Login>
-        <Name>Guebo</Name>
+        <Avatar src={user.avatar_url} />
+        <Login>{user.login}</Login>
+        <Name>{user.name}</Name>
       </Header>
       <Inner>
         <Date>
           <MdGroup size={20} />
-          3&nbsp; <i>seguidores</i> &nbsp;&middot;&nbsp; 3&nbsp; <i>seguindo</i>
+          {user.followers}&nbsp; <i>seguidores</i> &nbsp;&middot;&nbsp; {user.following}&nbsp; <i>seguindo</i>
         </Date>
+        { user.company &&
         <Date>
           <MdWork size={20} />
-          Porto
+          {user.company}
         </Date>
+        }
+        { user.location &&
         <Date>
           <MdLocationCity size={20} />
-          Sao Luis
+          {user.location}
         </Date>
+        }
+        {user.blog &&
         <Date>
           <MdLink size={20} />
-          <a href="https://github.com/velooso">veloosodec.com.br</a>
+          <a href={`\\${user.blog}`}>{user.blog}</a>
         </Date>
+        }
       </Inner>
     </Container>
-  );
 }
+
+  Profile.propTypes = {
+    user: PropTypes.shape({
+      login: PropTypes.string.isRequired,
+      avatar_url: PropTypes.string.isRequired,
+      name: PropTypes.string.isRequired,
+      company: PropTypes.string,
+      location: PropTypes.string,
+      blog: PropTypes.string,
+      followers: PropTypes.number.isRequired,
+      following: PropTypes.number.isRequired,
+    }).isRequired,
+  };
 
 export default Profile;
