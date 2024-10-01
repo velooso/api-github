@@ -8,7 +8,7 @@ function Repository() {
       <Description>RePOdESCR</Description>
       <Footer color='#7E5CEF'>
         <Lang>JS</Lang>
-        <Link href="https://www.devmedia.com.br/string-em-java-entendendo-e-utilizando-essa-classe/25503" target="_blank">VER</Link>
+        <Link href="https://github.com/velooso/projeto-devlinks" target="_blank">VER</Link>
       </Footer>
     </Container>
   )
