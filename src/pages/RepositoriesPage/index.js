@@ -3,6 +3,7 @@
   import Profile from './Profile';
   import Filter from './Filter';
   import Repositories from './Repositories';
+  import { getLangsFrom } from '../../services/api';
 
   function RepositoriesPage() {
     const user = {
@@ -16,47 +17,31 @@
       following: 4,
     };
 
-  const repos = [
+  const repositories = [
     {
-      name: 'repo1;',
+      id: '1',
+      name: 'repo1',
       description: 'descri',
       html_url: 'https://github.com/velooso/projeto-devlinks',
       language: 'JavaScript',
     },
     {
-      name: 'repo2;',
+      id: '2',
+      name: 'repo2',
       description: 'descri',
       html_url: 'https://github.com/velooso/projeto-devlinks',
       language: 'Java',
     },
     {
-      name: 'repo3;',
+      id: '3',
+      name: 'repo3',
       description: 'descri',
       html_url: 'https://github.com/velooso/projeto-devlinks',
       language: 'JavaScript',
     },
   ];
-console.log(repos)
-  //  criar array utilizar map e depois
-  //  criar reduce pra cntar as ocorrencias
-  const stats = repos
-   .map((repository) => repository.language)
-   .reduce((data,language) => ({
-    ...data,
-    [language] : (data[language] || 0) + 1,
-   }),
-   []
-   );
 
-console.log(stats);
-
-  const languages = [
-    { name: 'JavaScript', count: '2', color: '#f1c40f'},
-    { name: 'PHP', count: '5', color: '#95a5a6'},
-    { name: 'Shell', count: '5', color: '#E03131'},
-    { name: 'Java', count: '5', color: '#25BEFF'},
-    { name: 'Java', count: '5', color: '#25BEFF'},
-  ];
+    const languages = getLangsFrom(repositories);
 
     return(
     <Container>
@@ -65,7 +50,7 @@ console.log(stats);
         <Filter languages = { languages }/>
       </Sidebar>
       <Main>
-        <Repositories />
+        <Repositories  repositories = {repositories} />
       </Main>
     </Container>
     );

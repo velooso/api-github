@@ -1,15 +1,32 @@
 import React from 'react'
-import { Container } from './style';
+import PropTypes from 'prop-types';
 import Repository from './Repository';
+import { Container } from './style';
 
-function Repositories() {
+function Repositories({ repositories }) {
+
+  const repos = repositories.map((repository) => (
+    < Repository key={repository.id} repository={repository}/>
+  ));
+
   return (
    <Container>
-        <Repository />
+        {repos}
    </Container>
 )
 }
+Repositories.propTypes = {
+  repositories: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.number.isRequired,
+      name: PropTypes.string.isRequired,
+      description: PropTypes.string.isRequired,
+      html_url: PropTypes.string.isRequired,
+      language: PropTypes.string,
+    }).isRequired
+  ).isRequired
+};
 
 
 
-export default Repositories
+export default Repositories;
