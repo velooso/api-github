@@ -4,6 +4,7 @@ export const langColors = {
   python: '#2ecc71',
   html: '#e67e22',
   css: '#9b59b6',
+  java: '#003785',
   scss: '#9b59b6',
   vue: '#1abc9c',
   php: '#3498db',

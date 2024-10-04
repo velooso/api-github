@@ -1,13 +1,17 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Container, Name, Description, Footer, Lang, Link } from './style';
+import { langColors } from '../../../../services/config';
 
-function Repository({ repository }) {
+function Repository({ repository }){
+
+  const color = langColors[repository.language && repository.language.toLowerCase()];
+  
   return (
-    <Container color='#7E5CEF'>
+    <Container color={color}>
       <Name>{repository.name}</Name>
       <Description>{repository.description}</Description>
-      <Footer color='#7E5CEF'>
+      <Footer color={color}>
         <Lang>{repository.language}</Lang>
         <Link href={repository.html_url} target="_blank">VER</Link>
       </Footer>
@@ -26,4 +30,4 @@ Repository.propTypes ={
 }
 
 
-export default Repository
+export default Repository;
