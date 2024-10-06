@@ -12,8 +12,7 @@
 
     useEffect(() => {
       const loadData = async () => {
-        const [userResponse] = await Promise.all([getUser('velooso')
-        ]);
+        const [userResponse] = await Promise.all([getUser('velooso')]);
         setUser(userResponse.data);
 
         setLoading(false);
@@ -60,11 +59,12 @@
     const languages = getLangsFrom(repositories);
 
 
-
     const onFilterClick = (language) => {
       setCurrentLanguage(language);
-
 };
+
+
+
       if(loading){
         return <Loading>Carregando...</Loading>
       };
