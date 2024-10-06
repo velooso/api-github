@@ -1,23 +1,37 @@
-  import React, { useState } from 'react';
-  import { Container, Sidebar, Main } from './style';
+  import React, { useState, useEffect } from 'react';
+  import { Loading, Container, Sidebar, Main } from './style';
   import Profile from './Profile';
   import Filter from './Filter';
   import Repositories from './Repositories';
-  import { getLangsFrom } from '../../services/api';
+  import { getUser, getLangsFrom } from '../../services/api';
 
   function RepositoriesPage() {
+    const [user, setUser] = useState();
     const [currentLanguage, setCurrentLanguage] = useState();
+    const [loading, setLoading] = useState(true);
 
-    const user = {
-      login: 'velooso',
-      avatar_url: "https://avatars.githubusercontent.com/u/127763531?v=4",
-      name: 'Gabriel Veloso',
-      company: null,
-      location: null,
-      blog: "",
-      followers: 4,
-      following: 4,
-    };
+    useEffect(() => {
+      const loadData = async () => {
+        const [userResponse] = await Promise.all([getUser('velooso')
+        ]);
+        setUser(userResponse.data);
+
+        setLoading(false);
+      };
+
+      loadData();
+    }, []);
+
+    // const user = {
+    //   login: 'velooso',
+    //   avatar_url: "https://avatars.githubusercontent.com/u/127763531?v=4",
+    //   name: 'Gabriel Veloso',
+    //   company: null,
+    //   location: null,
+    //   blog: "",
+    //   followers: 4,
+    //   following: 4,
+    // };
 
   const repositories = [
     {
@@ -44,12 +58,17 @@
   ];
 
     const languages = getLangsFrom(repositories);
-   
 
 
-    const onFilterClick = (language) =>{
+
+    const onFilterClick = (language) => {
       setCurrentLanguage(language);
+
 };
+      if(loading){
+        return <Loading>Carregando...</Loading>
+      };
+
     return(
     <Container>
       <Sidebar>
@@ -60,8 +79,8 @@
         />
       </Sidebar>
       <Main>
-        <Repositories  
-        repositories = {repositories} 
+        <Repositories
+        repositories = {repositories}
         currentLanguage={currentLanguage}
         />
       </Main>
