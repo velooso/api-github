@@ -25,7 +25,11 @@
     "lint": "eslint src/**/*.{js,jsx}",
     "lint:fix": "eslint --fix src/**/*.{js,jsx,}",
     "format": "prettier --write src/**/*.{js,jsx,} --config .prettierrc.json",
+<<<<<<< HEAD
     "json-server": "json-server --watch db.json --routes routes.json --id login --port 5000"
+=======
+    "json-server": "json-server --watch db.json --id login --routes routes.json --port 5000"
+>>>>>>> 5e7efbcf85b87b21c1f061d1c35d2f03b3c0433b
   },
   "eslintConfig": {
     "extends": [

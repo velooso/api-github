@@ -6,7 +6,10 @@ export const Loading = styled.div`
   align-items: center;
   min-height: 100vh;
 `;
+<<<<<<< HEAD
 
+=======
+>>>>>>> 5e7efbcf85b87b21c1f061d1c35d2f03b3c0433b
 export const Container = styled.main`
   display: flex;
   min-height: 100vh;
