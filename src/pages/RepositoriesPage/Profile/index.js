@@ -13,7 +13,7 @@ import { Container, Header, Login, Avatar, Name, Inner, Date } from './style';
       <Inner>
         <Date>
           <MdGroup size={20} />
-          {user.followers}&nbsp; <i>seguidores</i> &nbsp;&middot;&nbsp; {user.following}&nbsp; <i>seguindo</i>
+          {user.followers}&nbsp; <i>seguidores</i>&nbsp;&middot;&nbsp;{user.following}&nbsp;<i>seguindo</i>
         </Date>
         { user.company &&
         <Date>

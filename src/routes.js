@@ -6,8 +6,8 @@ import RepositoriesPage from "./pages/RepositoriesPage"
 
  export function AppRoutes() {
   return (
-      <Routes>
-        <Route path="/repositories" element= {<RepositoriesPage />}/>
+       <Routes>
+        <Route path="/:login/repositories" element= {<RepositoriesPage />}/>
         <Route exact path="/" element= {<MainPage />} />
       </Routes>
   );
