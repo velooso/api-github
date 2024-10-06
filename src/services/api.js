@@ -5,12 +5,8 @@ const api = axios.create({
   baseURL: process.env.REACT_APP_API_BASE_URL,
 });
 
-<<<<<<< HEAD
 export const getUser = async(login) => api.get(`users/${login}`);
 export const getRepos = async(login) => api.get(`users/${login}/repos`);
-=======
-export const getUser = async (login) => api.get(`/users/${login}`);
->>>>>>> 5e7efbcf85b87b21c1f061d1c35d2f03b3c0433b
 
 export default api;
 

@@ -1,14 +1,9 @@
   import React, { useState, useEffect } from 'react';
-<<<<<<< HEAD
   import { useParams } from 'react-router-dom';
-
-=======
->>>>>>> 5e7efbcf85b87b21c1f061d1c35d2f03b3c0433b
   import { Loading, Container, Sidebar, Main } from './style';
   import Profile from './Profile';
   import Filter from './Filter';
   import Repositories from './Repositories';
-<<<<<<< HEAD
   import { getUser, getRepos, getLangsFrom } from '../../services/api';
 
   function RepositoriesPage() {
@@ -48,73 +43,6 @@
   if(loading){
     return <Loading>Carregando...</Loading>
   };
-=======
-  import { getUser, getLangsFrom } from '../../services/api';
-
-  function RepositoriesPage() {
-    const [user, setUser] = useState();
-    const [currentLanguage, setCurrentLanguage] = useState();
-    const [loading, setLoading] = useState(true);
-
-    useEffect(() => {
-      const loadData = async () => {
-        const [userResponse] = await Promise.all([getUser('velooso')]);
-        setUser(userResponse.data);
-
-        setLoading(false);
-      };
-
-      loadData();
-    }, []);
-
-    // const user = {
-    //   login: 'velooso',
-    //   avatar_url: "https://avatars.githubusercontent.com/u/127763531?v=4",
-    //   name: 'Gabriel Veloso',
-    //   company: null,
-    //   location: null,
-    //   blog: "",
-    //   followers: 4,
-    //   following: 4,
-    // };
-
-  const repositories = [
-    {
-      id: '1',
-      name: 'repo1',
-      description: 'descri',
-      html_url: 'https://github.com/velooso/projeto-devlinks',
-      language: 'JavaScript',
-    },
-    {
-      id: '2',
-      name: 'repo2',
-      description: 'descri',
-      html_url: 'https://github.com/velooso/projeto-devlinks',
-      language: 'Java',
-    },
-    {
-      id: '3',
-      name: 'repo3',
-      description: 'descri',
-      html_url: 'https://github.com/velooso/projeto-devlinks',
-      language: 'JavaScript',
-    },
-  ];
-
-    const languages = getLangsFrom(repositories);
-
-
-    const onFilterClick = (language) => {
-      setCurrentLanguage(language);
-};
-
-
-
-      if(loading){
-        return <Loading>Carregando...</Loading>
-      };
->>>>>>> 5e7efbcf85b87b21c1f061d1c35d2f03b3c0433b
 
     return(
     <Container>
